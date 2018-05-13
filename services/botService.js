@@ -128,6 +128,10 @@ Bot.choseMenu = (req, content, callback) => {
       callback(null, message.baseType("다음에 또 봐요. 🤖"));
       break;
 
+    case "공지사항":
+      callback(null, message.baseType("서울RND메뉴를 다시 시작합니다.\n많은 애용 및 관심부탁드립니다.(하트뿅)"));
+      break;
+
     case "💌 EOS 안내":
       callback(null, message.baseType("서울RND메뉴를 그동안 사랑해 주셔서 감사합니다.\n세계 경제 침체와 급격한 사용자 감소에 따라서\n본 서비스도 다른 삼성전자 서비스들과 같이 EOS를 하게 되었습니다.(~11월 30일)(눈물)\n그 동안 응원해 주시고 사랑해 주셔서 감사하며\n추후 더 좋은 서비스로 찾아 뵙겠습니다.(하트뿅)"));
         break;
