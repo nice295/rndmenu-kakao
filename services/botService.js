@@ -38,17 +38,16 @@ Bot.choseMenu = (req, content, callback) => {
         //callback(null, message.messageButtonType(data, "자세히 보기", "https://uxd2.github.io/rndmenu-web/cafe1-lunch.framer/"));
       });
       */
-      
+
       if (cache.get('1-lunch')) {
         console.log(cache.get('1-lunch'));
-        //callback(null, message.messageButtonType(cache.get('1-lunch'), "자세히 보기", "http://seoul-rnd-menu.webflow.io/"));        
-        callback(null, message.baseType(cache.get('1-lunch')));      
+        //callback(null, message.messageButtonType(cache.get('1-lunch'), "자세히 보기", "http://seoul-rnd-menu.webflow.io/"));
+        callback(null, message.baseType(cache.get('1-lunch')));
       } else {
         console.log("No 1-lunch");
         getMenu(12, function (data) {
-          //callback(null, message.baseType(data));
           //callback(null, message.baseType(data, "자세히 보기", "http://seoul-rnd-menu.webflow.io/"));
-          callback(null, message.messageButtonType(data));
+          callback(null, message.baseType(data));
           cache.put('1-lunch', data, 1 * 60 * 60 * 1000);
         });
       }
@@ -137,7 +136,7 @@ Bot.choseMenu = (req, content, callback) => {
       getApiai(content, function (data) {
         callback(null, message.baseTypeText(data));
       });
-      break;     
+      break;
   }
 
   var now = new time.Date();
