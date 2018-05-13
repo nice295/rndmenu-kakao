@@ -14,6 +14,10 @@ message.buttons = [ '1식당-점심',
                     '2식당-아침', '2식당-점심', "2식당-저녁",
                     "내일 뭐먹지?", "💌 공지사항"];
 
+message.morebuttons = [ '자세히 보기',
+                    '메뉴 사진 보기 (TBD)',
+                    '상위 메뉴'];
+
 message.buttonsType = () => {
     return {
         type: 'buttons',
@@ -29,6 +33,18 @@ message.baseType = (text) => {
         keyboard: {
             type: 'buttons',
             buttons: message.buttons
+        }
+    }
+};
+
+message.baseTypeWithButtons = (text, buttons) => {
+    return {
+        message: {
+            text: text,
+        },
+        keyboard: {
+            type: 'buttons',
+            buttons: buttons
         }
     }
 };

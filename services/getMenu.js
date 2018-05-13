@@ -148,6 +148,47 @@ function getMenu(cafe, callback) {
                 });
 
                 callback(returnString);
+            }
+            else if (cafe == 120) {
+                console.log("점심 - Cafeteria 1");
+                returnString = "< 1식당(AB타워) - 점심> (하하)";
+
+                $('.cafeB_tit', '#layer2').each(function () {
+                    //var restaurant = myMap.get($(this).find('span.cafeB_restaurant').find('img').attr('src'));
+                    var restaurant = $(this).find('span.img_orange').text();
+                    if (restaurant) {
+                        var menuTitle = $(this).parent().find('.cafeB_tit').text();
+                        var description = $(this).parent().find('.cafeB_txt').text();
+
+                        menuTitle = menuTitle
+                            .replace(restaurant, '')
+                            .replace(/\s+/g, '')
+                            .replace('(선택식)', '')
+                            .replace('[선택식]', '')
+                            .replace(/\[.*\]/gi, '')
+                            .replace(/\(.*\)/gi, '')
+                            .replace(/\//g, ',')
+                            .replace(/,/g, ', ');
+                        description = description
+                            .replace(/\s+/g, '')
+                            .replace('(선택식)', '')
+                            .replace('[선택식]', '')
+                            .replace(/\[.*\]/gi, '')
+                            .replace(/\(.*\)/gi, '')
+                            .replace(/\//g, ',')
+                            .replace(/,/g, ', ');
+
+                        console.log('restaurant : ' + restaurant);
+                        console.log('menuTitle : ' + menuTitle);
+                        console.log('description : ' + description);
+
+                        returnString += "\n*" + menuTitle + " (" + restaurant + ")" + "\n" + description + "\n";
+                    } else {
+                        console.log("*** No restaurant: " + $(this).find('span.cafeB_restaurant').find('img').attr('src'));
+                    }
+                });
+
+                callback(returnString);
             } else if (cafe == 13) {
                 //console.log("점심 - Cafeteria 1");
                 returnString = "< 1식당(AB타워) - 저녁>";

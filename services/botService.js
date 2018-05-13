@@ -34,7 +34,7 @@ Bot.choseMenu = (req, content, callback) => {
     case "1":
       /*
       getMenu(12, function (data) {
-        callback(null, message.baseType(data));
+        callback(null, message.baseTypeWithButtons(data, message.morebuttons));
         //callback(null, message.messageButtonType(data, "자세히 보기", "https://uxd2.github.io/rndmenu-web/cafe1-lunch.framer/"));
       });
       */
@@ -42,15 +42,24 @@ Bot.choseMenu = (req, content, callback) => {
       if (cache.get('1-lunch')) {
         console.log(cache.get('1-lunch'));
         //callback(null, message.messageButtonType(cache.get('1-lunch'), "자세히 보기", "http://seoul-rnd-menu.webflow.io/"));
-        callback(null, message.baseType(cache.get('1-lunch')));
+        //callback(null, message.baseType(cache.get('1-lunch')));
+        callback(null, message.messageButtonType(cache.get('1-lunch'), message.morebuttons));
       } else {
         console.log("No 1-lunch");
         getMenu(12, function (data) {
           //callback(null, message.baseType(data, "자세히 보기", "http://seoul-rnd-menu.webflow.io/"));
-          callback(null, message.baseType(data));
+          //callback(null, message.baseType(data));
+          callback(null, message.messageButtonType(data), message.morebuttons);
           cache.put('1-lunch', data, 1 * 60 * 60 * 1000);
         });
       }
+      break;
+
+    case "자세히 보기":
+      getMenu(120, function (data) {
+        callback(null, message.baseType(data));
+        //callback(null, message.messageButtonType(data, "자세히 보기", "https://uxd2.github.io/rndmenu-web/cafe1-lunch.framer/"));
+      });
       break;
 
     case "2식당-아침":
@@ -130,6 +139,14 @@ Bot.choseMenu = (req, content, callback) => {
 
     case "💌 공지사항":
       callback(null, message.baseType("삼성전자 우면사업장 서울R&D메뉴를 다시 시작합니다.\n많은 애용 및 관심부탁드립니다.(하트뿅)"));
+      break;
+
+    case "메뉴 사진 보기 (TBD)":
+      callback(null, message.baseType("준비 중입니다.(하트뿅)"));
+      break;
+
+    case "상위 메뉴":
+      callback(null, message.baseType("안녕하세요? 서울R&D메뉴입니다."));
       break;
 
     case "💌 EOS 안내":
