@@ -1,9 +1,9 @@
 const Bot = {};
 
-const message = require('../service/message');
-const getMenu = require('../service/getMenu');
-const getTomorrowMenu = require('../service/getTomorrowMenu');
-const getApiai = require('../service/getApiai');
+const message = require('../services/messages');
+const getMenu = require('../services/getMenu');
+const getTomorrowMenu = require('../services/getTomorrowMenu');
+const getApiai = require('../services/getApiai');
 const cache = require('memory-cache');
 const firebase = require('firebase');
 const dateFormat = require('dateformat');
@@ -28,19 +28,27 @@ Bot.choseMenu = (req, content, callback) => {
   visitor.event("message", content, req.body.user_key, 0).send();
 
   switch (content) {
-    case "🏠 1식당-점심":
+    case "1식당-점심":
     case "점심":
     case "1식당":
     case "1":
+      /*
+      getMenu(12, function (data) {
+        callback(null, message.baseType(data));
+        //callback(null, message.messageButtonType(data, "자세히 보기", "https://uxd2.github.io/rndmenu-web/cafe1-lunch.framer/"));
+      });
+      */
+      
       if (cache.get('1-lunch')) {
         console.log(cache.get('1-lunch'));
-        //callback(null, message.baseType(cache.get('1-lunch')));
-        callback(null, message.messageButtonType(cache.get('1-lunch'), "자세히 보기", "https://uxd2.github.io/rndmenu-web/cafe1-lunch.framer/"));
+        //callback(null, message.messageButtonType(cache.get('1-lunch'), "자세히 보기", "http://seoul-rnd-menu.webflow.io/"));        
+        callback(null, message.baseType(cache.get('1-lunch')));      
       } else {
         console.log("No 1-lunch");
         getMenu(12, function (data) {
           //callback(null, message.baseType(data));
-          callback(null, message.messageButtonType(cache.get('1-lunch'), "자세히 보기", "https://uxd2.github.io/rndmenu-web/cafe1-lunch.framer/"));
+          //callback(null, message.baseType(data, "자세히 보기", "http://seoul-rnd-menu.webflow.io/"));
+          callback(null, message.messageButtonType(data));
           cache.put('1-lunch', data, 1 * 60 * 60 * 1000);
         });
       }
@@ -122,7 +130,7 @@ Bot.choseMenu = (req, content, callback) => {
       break;
 
     case "💌 EOS 안내":
-      callback(null, message.baseType("서울RND메뉴를 그동안 사랑해 주셔서 감사합니다.(하트뿅)\n\n세계 경제 침체와 급격한 사용자 감소에 따라서 본 서비스도 다른 삼성전자 서비스들과 같이 EOS를 하게 되었습니다.(~11월 30일)(눈물)\n\n그 동안 응원해 주시고 사랑해 주셔서 감사하며 추후 더 좋은 서비스로 찾아 뵙겠습니다.(하트뿅)"));
+      callback(null, message.baseType("서울RND메뉴를 그동안 사랑해 주셔서 감사합니다.\n세계 경제 침체와 급격한 사용자 감소에 따라서\n본 서비스도 다른 삼성전자 서비스들과 같이 EOS를 하게 되었습니다.(~11월 30일)(눈물)\n그 동안 응원해 주시고 사랑해 주셔서 감사하며\n추후 더 좋은 서비스로 찾아 뵙겠습니다.(하트뿅)"));
         break;
 
     default:

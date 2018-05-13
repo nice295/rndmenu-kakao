@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const message = require('../service/message');
-const Bot = require('../service/BotService');
-const getMenu = require('../service/getMenu');
-const getTomorrowMenu = require('../service/getTomorrowMenu');
-const getApiai = require('../service/getApiai');
-const saveMenu = require('../service/saveMenu');
+const message = require('./services/messages');
+const Bot = require('./services/botService');
+const getMenu = require('./services/getMenu');
+const getTomorrowMenu = require('./services/getTomorrowMenu');
+const getApiai = require('./services/getApiai');
+const saveMenu = require('./services/saveMenu');
 
 var ua = require('universal-analytics');
 var visitor = ua('UA-51117181-7');

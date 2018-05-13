@@ -1,4 +1,4 @@
-const message = require('../service/message');
+const message = require('../services/messages');
 var cheerio = require('cheerio');
 var request = require('request');
 var Iconv1 = require('iconv').Iconv
@@ -72,12 +72,14 @@ function getTomorrowMenu(callback) {
             returnString += "\n\n< 1식당(AB타워) - 점심> (하하)";
 
             $('.cafeB_tit', '#layer2').each(function () {
-                var restaurant = myMap.get($(this).find('span.cafeB_restaurant').find('img').attr('src'));
-                if (restaurant) {
-                    var menuTitle = $(this).text().trim();
+                //var restaurant = myMap.get($(this).find('span.cafeB_restaurant').find('img').attr('src'));
+                var restaurant = $(this).find('span.img_orange').text(); 
+                if (restaurant) {  
                     var description = $(this).parent().find('.cafeB_txt').text();
-
+                    var menuTitle = $(this).text().trim();
+                  
                     menuTitle = menuTitle
+                        .replace(restaurant, '')
                         .replace(/\s+/g, '')
                         .replace('(선택식)', '')
                         .replace('[선택식]', '')
@@ -94,11 +96,11 @@ function getTomorrowMenu(callback) {
                         .replace(/\//g, ',')
                         .replace(/,/g, ', ');
 
-                    //console.log(restaurant + ': ' + menuTitle);
-                    //returnString += "\n" + menuTitle + " - " + restaurant;
-                    returnString += "\n" + menuTitle;
-                    //console.log("Description: " + description);
-                    //console.log("\n\n");
+                    console.log('restaurant : ' + restaurant);
+                    console.log('menuTitle : ' + menuTitle);
+                    console.log('description : ' + description);
+                  
+                    returnString += "\n" + menuTitle + " (" + restaurant + ")";
                 } else {
                     console.log("*** No restaurant: " + $(this).find('span.cafeB_restaurant').find('img').attr('src'));
                 }
@@ -107,15 +109,14 @@ function getTomorrowMenu(callback) {
             //console.log("점심- Cafeteria 2");
             returnString += "\n\n< 2식당(D타워) - 아침> (굿)";
             $('.cafeA_tit', '#layer1').each(function () {
-                var restaurant = myMap.get($(this).find('span.cafeA_restaurant').find('img').attr('src'));
-                if (restaurant) {
+                //var restaurant = myMap.get($(this).find('span.cafeA_restaurant').find('img').attr('src'));
+                var restaurant = $(this).find('span.img_green').text(); 
+                if (restaurant) {             
+                    var description = $(this).parent().find('.cafeB_txt').text();
                     var menuTitle = $(this).text().trim();
-                    var description = $(this).parent().find('.cafeA_txt').text();
-                    //menuTitle = menuTitle.replace(/\s+/g, '').replace('[','(').replace(']',')').replace('/',',');
-                    //description = description.replace(/\s+/g, '').replace(' ', '').replace('[','(').replace(']',')').replace('/',',');
-                    var nm = "(선택식)닭가슴살망고샐러드(계육:국내산)";
-
+                  
                     menuTitle = menuTitle
+                        .replace(restaurant, '')
                         .replace(/\s+/g, '')
                         .replace('(선택식)', '')
                         .replace('[선택식]', '')
@@ -132,11 +133,11 @@ function getTomorrowMenu(callback) {
                         .replace(/\//g, ',')
                         .replace(/,/g, ', ');
 
-                    //console.log(restaurant + ': ' + menuTitle);
-                    //returnString += "\n" + menuTitle + " - " + restaurant;
-                    returnString += "\n" + menuTitle
-                    //console.log("Description: " + description);
-                    //console.log("\n\n");
+                    console.log('restaurant : ' + restaurant);
+                    console.log('menuTitle : ' + menuTitle);
+                    console.log('description : ' + description);
+                  
+                    returnString += "\n" + menuTitle + " (" + restaurant + ")";
                 } else {
                     console.log("*** No restaurant: " + $(this).find('span.cafeA_restaurant').find('img').attr('src'));
                 }
@@ -147,7 +148,8 @@ function getTomorrowMenu(callback) {
             //console.log("점심- Cafeteria 2");
             returnString += "\n\n< 2식당(D타워) - 점심> (아잉)";
             $('.cafeA_tit', '#layer2').each(function () {
-                var restaurant = myMap.get($(this).find('span.cafeA_restaurant').find('img').attr('src'));
+                //var restaurant = myMap.get($(this).find('span.cafeA_restaurant').find('img').attr('src'));
+                var restaurant = $(this).find('span.img_green').text(); 
                 if (restaurant) {
                     var menuTitle = $(this).text().trim();
                     var description = $(this).parent().find('.cafeA_txt').text();
@@ -156,6 +158,7 @@ function getTomorrowMenu(callback) {
                     var nm = "(선택식)닭가슴살망고샐러드(계육:국내산)";
 
                     menuTitle = menuTitle
+                        .replace(restaurant, '')
                         .replace(/\s+/g, '')
                         .replace('(선택식)', '')
                         .replace('[선택식]', '')
@@ -172,11 +175,11 @@ function getTomorrowMenu(callback) {
                         .replace(/\//g, ',')
                         .replace(/,/g, ', ');
 
-                    //console.log(restaurant + ': ' + menuTitle);
-                    //returnString += "\n" + menuTitle + " - " + restaurant;
-                    returnString += "\n" + menuTitle;
-                    //console.log("Description: " + description);
-                    //console.log("\n\n");
+                    console.log('restaurant : ' + restaurant);
+                    console.log('menuTitle : ' + menuTitle);
+                    console.log('description : ' + description);
+                  
+                    returnString += "\n" + menuTitle + " (" + restaurant + ")";
                 } else {
                     console.log("*** No restaurant: " + $(this).find('span.cafeA_restaurant').find('img').attr('src'));
                 }
@@ -187,7 +190,8 @@ function getTomorrowMenu(callback) {
             //console.log("점심- Cafeteria 2");
             returnString += "\n\n< 2식당(D타워) - 저녁> (감동)";
             $('.cafeA_tit', '#layer3').each(function () {
-                var restaurant = myMap.get($(this).find('span.cafeA_restaurant').find('img').attr('src'));
+                //var restaurant = myMap.get($(this).find('span.cafeA_restaurant').find('img').attr('src'));
+                var restaurant = $(this).find('span.img_green').text(); 
                 if (restaurant) {
                     var menuTitle = $(this).text().trim();
                     var description = $(this).parent().find('.cafeA_txt').text();
@@ -196,6 +200,7 @@ function getTomorrowMenu(callback) {
                     var nm = "(선택식)닭가슴살망고샐러드(계육:국내산)";
 
                     menuTitle = menuTitle
+                        .replace(restaurant, '')
                         .replace(/\s+/g, '')
                         .replace('(선택식)', '')
                         .replace('[선택식]', '')
@@ -212,11 +217,11 @@ function getTomorrowMenu(callback) {
                         .replace(/\//g, ',')
                         .replace(/,/g, ', ');
 
-                    //console.log(restaurant + ': ' + menuTitle);
-                    //returnString += "\n" + menuTitle + " - " + restaurant;
-                    returnString += "\n" + menuTitle;
-                    //console.log("Description: " + description);
-                    //console.log("\n\n");
+                    console.log('restaurant : ' + restaurant);
+                    console.log('menuTitle : ' + menuTitle);
+                    console.log('description : ' + description);
+                  
+                    returnString += "\n" + menuTitle + " (" + restaurant + ")";
                 } else {
                     console.log("*** No restaurant: " + $(this).find('span.cafeA_restaurant').find('img').attr('src'));
                 }
