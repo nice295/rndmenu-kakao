@@ -43,7 +43,7 @@ var restaurantMap = [
     ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_04.gif", "가츠엔"],
     ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_09.gif", "테이크아웃 2"],
     ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_healthy.gif", "테이크아웃 3"]
-    
+
 ];
 */
 
@@ -71,8 +71,8 @@ function saveMenu() {
 
 function _saveMenu(cafe) {
     request({
-            //url: 'http://www.welstory.com/menu/seoulrnd/menu.jsp',
-            url: 'http://www.welstory.com/menu/seoulrnd/menu.jsp?meal_type=2&course=AA&dtFlag=2',
+            url: 'http://www.welstory.com/menu/seoulrnd/menu.jsp',
+            //url: 'http://www.welstory.com/menu/seoulrnd/menu.jsp?meal_type=2&course=AA&dtFlag=2',
             encoding: 'binary'
         },
         function (error, response, html) {
@@ -90,14 +90,14 @@ function _saveMenu(cafe) {
             //var myMap = new Map(restaurantMap);
 
             var date = $('.date', '#layer2').text().replace("년", "").replace("월", "").replace("일", "").trim();
-            date = date.replace(/\s/g, '');            
+            date = date.replace(/\s/g, '');
             //console.log('Date:' + date);
 
             var usersRef = ref.child(date);
             var cafeteriaRef12 = usersRef.child("1식당/점심");
-            var cafeteriaRef21 = usersRef.child("2식당/아침");     
-            var cafeteriaRef22 = usersRef.child("2식당/점심");   
-            var cafeteriaRef23 = usersRef.child("2식당/저녁");   
+            var cafeteriaRef21 = usersRef.child("2식당/아침");
+            var cafeteriaRef22 = usersRef.child("2식당/점심");
+            var cafeteriaRef23 = usersRef.child("2식당/저녁");
 
             if (cafe == 11) {
                 //console.log("점심 - Cafeteria 1");
@@ -142,14 +142,14 @@ function _saveMenu(cafe) {
 
                 $('.cafeB_tit', '#layer2').each(function () {
                     //var restaurant = myMap.get($(this).find('span.cafeB_restaurant').find('img').attr('src'));
-                    var restaurant = $(this).find('span.img_orange').text(); 
+                    var restaurant = $(this).find('span.img_orange').text();
                     if (restaurant) {
                         var menuTitle = $(this).parent().find('.cafeB_tit').text();
                         var description = $(this).parent().find('.cafeB_txt').text();
 
                         restaurant = restaurant
-                            .replace(/\//g, '');                      
-                      
+                            .replace(/\//g, '');
+
                         menuTitle = menuTitle
                             .replace(restaurant, '')
                             .replace(/\s+/g, '')
@@ -205,8 +205,8 @@ function _saveMenu(cafe) {
                         var description = $(this).parent().find('.cafeB_txt').text();
 
                         restaurant = restaurant
-                            .replace(/\//g, ''); 
-                      
+                            .replace(/\//g, '');
+
                         menuTitle = menuTitle
                             .replace(restaurant, '')
                             .replace(/\s+/g, '')
@@ -247,8 +247,8 @@ function _saveMenu(cafe) {
                         var description = $(this).parent().find('.cafeA_txt').text();
 
                         restaurant = restaurant
-                            .replace(/\//g, ''); 
-                      
+                            .replace(/\//g, '');
+
                         menuTitle = menuTitle
                             .replace(restaurant, '')
                             .replace(/\s+/g, '')
@@ -303,11 +303,11 @@ function _saveMenu(cafe) {
                     if (restaurant) {
                         var menuTitle = $(this).text().trim();
                         var description = $(this).parent().find('.cafeA_txt').text();
-                      
+
 
                         restaurant = restaurant
-                            .replace(/\//g, ''); 
-                      
+                            .replace(/\//g, '');
+
                         menuTitle = menuTitle
                             .replace(restaurant, '')
                             .replace(/\s+/g, '')
@@ -364,8 +364,8 @@ function _saveMenu(cafe) {
                         var description = $(this).parent().find('.cafeA_txt').text();
 
                         restaurant = restaurant
-                            .replace(/\//g, ''); 
-                      
+                            .replace(/\//g, '');
+
                         menuTitle = menuTitle
                             .replace(restaurant, '')
                             .replace(/\s+/g, '')
