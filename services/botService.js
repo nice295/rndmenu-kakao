@@ -128,8 +128,8 @@ Bot.choseMenu = (req, content, callback) => {
       callback(null, message.baseType("다음에 또 봐요. 🤖"));
       break;
 
-    case "공지사항":
-      callback(null, message.baseType("서울RND메뉴를 다시 시작합니다.\n많은 애용 및 관심부탁드립니다.(하트뿅)"));
+    case "💌 공지사항":
+      callback(null, message.baseType("삼성전자 우면사업자 서울R&D메뉴를 다시 시작합니다.\n많은 애용 및 관심부탁드립니다.(하트뿅)"));
       break;
 
     case "💌 EOS 안내":
@@ -138,7 +138,7 @@ Bot.choseMenu = (req, content, callback) => {
 
     default:
       getApiai(content, function (data) {
-        callback(null, message.baseTypeText(data));
+        callback(null, message.baseType(data));
       });
       break;
   }
