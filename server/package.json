@@ -1,0 +1,16 @@
+{
+  "name": "kakaobot",
+  "version": "0.0.1",
+  "description": "Kakaobot server for Seoul RnD menu",
+  "main": "server.js",
+  "dependencies": {
+    "google-images": "^2.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm start",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

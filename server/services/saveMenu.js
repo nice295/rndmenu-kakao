@@ -3,6 +3,9 @@ const request = require('request');
 const Iconv1 = require('iconv').Iconv
 const firebase = require('firebase');
 
+const GoogleImages = require('google-images'); 
+const client = new GoogleImages('006341800035892376322:rrzsjzbfwfs', 'AIzaSyANl_jRq8GJVBCwyh_HIEXHnV5QF7_cess');
+
 //var returnString = "";
 
 /*
@@ -63,6 +66,7 @@ var ref = db.ref("menu");
 var refFood= db.ref("foods");
 
 function saveMenu() {
+    console.log("Starting save menu...")
     _saveMenu(12);
     _saveMenu(21);
     _saveMenu(22);
@@ -71,8 +75,8 @@ function saveMenu() {
 
 function _saveMenu(cafe) {
     request({
-            url: 'http://www.welstory.com/menu/seoulrnd/menu.jsp',
-            //url: 'http://www.welstory.com/menu/seoulrnd/menu.jsp?meal_type=2&course=AA&dtFlag=2',
+            //url: 'http://www.welstory.com/menu/seoulrnd/menu.jsp',
+            url: 'http://www.welstory.com/menu/seoulrnd/menu.jsp?meal_type=2&course=AA&dtFlag=2',
             encoding: 'binary'
         },
         function (error, response, html) {
@@ -115,8 +119,8 @@ function _saveMenu(cafe) {
                             .replace('[선택식]', '')
                             .replace(/\[.*\]/gi, '')
                             .replace(/\(.*\)/gi, '')
-                            .replace(/\//g, ',')
-                            .replace(/,/g, ', ');
+                            .replace(/\//g, '')
+                            .replace(/,/g, '');
                         description = description
                             .replace(/\s+/g, '')
                             .replace('(선택식)', '')
@@ -124,7 +128,7 @@ function _saveMenu(cafe) {
                             .replace(/\[.*\]/gi, '')
                             .replace(/\(.*\)/gi, '')
                             .replace(/\//g, ',')
-                            .replace(/,/g, ', ');
+                            .replace(/,/g, ',');
 
                         console.log(restaurant + ': ' + menuTitle);
                         //returnString += "\n" + menuTitle + " - " + restaurant;
@@ -157,16 +161,16 @@ function _saveMenu(cafe) {
                             .replace('[선택식]', '')
                             .replace(/\[.*\]/gi, '')
                             .replace(/\(.*\)/gi, '')
-                            .replace(/\//g, ',')
-                            .replace(/,/g, ', ');
+                            .replace(/\//g, '')
+                            .replace(/,/g, '');
                         description = description
                             .replace(/\s+/g, '')
                             .replace('(선택식)', '')
                             .replace('[선택식]', '')
                             .replace(/\[.*\]/gi, '')
                             .replace(/\(.*\)/gi, '')
-                            .replace(/\//g, ',')
-                            .replace(/,/g, ', ');
+                            .replace(/\//g, '')
+                            .replace(/,/g, '');
 
                         //console.log(restaurant + ': ' + menuTitle);
                         //returnString += "\n" + menuTitle + " - " + restaurant;
@@ -178,17 +182,44 @@ function _saveMenu(cafe) {
                         {
                             menu: menuTitle,
                             restaurant: restaurant,
-                            description: description
+                            description: description,
+                            photoUrl: "https://placekitten.com/200/200"
                         });
 
                         var newFood = refFood.child(menuTitle);
                         newFood.update(
                         {
                             restaurant: restaurant,
-                            cafeteria: "Cafeteria 12"
+                            cafeteria: "Cafeteria 12",
+                            photoUrl: "https://placekitten.com/200/200"
                         });
+
+                        client.search(menuTitle)
+                            .then(images => {
+                                //console.log(images[0].url)
+                                //console.log("Length: " + images.length)
+                                for (var i = 0; i < images.length; i++) {
+                                    imageUrl = images[i].url                                  
+                                    if (imageUrl.substring(imageUrl.length - 4) == '.jpg') {
+                                        console.log(menuTitle + "'s URL is " + imageUrl)
+
+                                        restaurantRef.update(
+                                            {
+                                                 photoUrl: imageUrl
+                                            });
+            
+                                            newFood.update(
+                                            {
+                                                photoUrl: imageUrl
+                                            });
+
+                                        break;
+                                    }
+                                }
+                        });
+
                     } else {
-                        console.log("*** No restaurant: " + $(this).find('span.cafeB_restaurant').find('img').attr('src'));
+                        //console.log("*** No restaurant: " + $(this).find('span.cafeB_restaurant').find('img').attr('src'));
                     }
                 });
 
