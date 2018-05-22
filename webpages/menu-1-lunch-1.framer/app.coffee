@@ -44,7 +44,9 @@ scroll.onMove (event) ->
 	HeaderDay.y = Utils.modulate(event.y, [scrollStart, range], [32, 15], true)
 	HeaderDay.fontSize = Utils.modulate(event.y, [scrollStart, range], [36, 14], true)
 
-# Get Menu DB 		
+# Get Menu DB
+Utils.insertCSS('@import url(https://fonts.googleapis.com/earlyaccess/hanna.css);')
+	
 menuDB.get "/menu/"+getDate()+"/1식당/점심", (menus) ->
 	menusArray = _.toArray(menus)
 
@@ -66,18 +68,14 @@ menuDB.get "/menu/"+getDate()+"/1식당/점심", (menus) ->
 		menu.parent = item
 		menu.text = menuData.menu
 		menu.width = item.width * 0.5
-		doHyeon = Utils.loadWebFont("BM DoHyeon")
-		menu.fontFamily = doHyeon
+		menu.fontFamily = "'Hanna', fantasy"
 		
-		# Load Raleway from Google Web Fonts 
-		raleway = Utils.loadWebFont("Raleway")
-	
 		sidemenu = _sidemenu.copySingle()
 		sidemenu.parent = item
 		sidemenu.text = menuData.description
 		sidemenu.maxY = Align.bottom(-8)
 		sidemenu.width = item.width * 0.5
-		sidemenu.fontFamily = doHyeon
+		sidemenu.fontFamily = Utils.loadWebFont('Nanum+Myeongjo')
 	
 		restaurant = _restaurant.copySingle()
 		restaurant.parent = item

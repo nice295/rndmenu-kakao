@@ -33,12 +33,12 @@
                 "styledText" : {
                   "cached" : {
                     "size" : {
-                      "width" : 116,
+                      "width" : 100,
                       "height" : 43
                     },
                     "os" : "10_12",
                     "width" : 0,
-                    "html" : "<span data-offset-key=\"8fmvn-0-0\" style=\"tab-size:4;font-family:&quot;.SFNSText-Heavy&quot;, &quot;SFProText-Heavy&quot;, &quot;.SFUIText-Heavy&quot;, sans-serif;-webkit-text-fill-color:rgb(255, 255, 255);font-size:36px;letter-spacing:0px;line-height:1.2000000000000002\"><span data-text=\"true\">Lunch<\/span><\/span>"
+                    "html" : "<span data-offset-key=\"8fmvn-0-0\" style=\"tab-size:4;font-family:&quot;Roboto-Bold&quot;, &quot;Roboto&quot;, sans-serif;-webkit-text-fill-color:rgb(255, 255, 255);font-size:36px;letter-spacing:0px;line-height:1.2000000000000002;font-weight:700\"><span data-text=\"true\">Lunch<\/span><\/span>"
                   },
                   "entityMap" : {
 
@@ -48,33 +48,33 @@
                       "depth" : 0,
                       "inlineStyleRanges" : [
                         {
+                          "length" : 5,
                           "style" : "ALIGN:center",
-                          "length" : 5,
                           "offset" : 0
                         },
                         {
+                          "length" : 5,
                           "style" : "LINEHEIGHT:1.2000000000000002",
-                          "length" : 5,
                           "offset" : 0
                         },
                         {
+                          "length" : 5,
                           "style" : "SIZE:36",
-                          "length" : 5,
                           "offset" : 0
                         },
                         {
-                          "style" : "FONT:__SF-UI-Text-Heavy__",
                           "length" : 5,
-                          "offset" : 0
-                        },
-                        {
                           "style" : "LETTERSPACING:0",
-                          "length" : 5,
                           "offset" : 0
                         },
                         {
-                          "style" : "COLOR:rgb(255, 255, 255)",
                           "length" : 5,
+                          "style" : "COLOR:rgb(255, 255, 255)",
+                          "offset" : 0
+                        },
+                        {
+                          "length" : 5,
+                          "style" : "FONT:Roboto-Bold",
                           "offset" : 0
                         }
                       ],
@@ -86,9 +86,9 @@
                           "ALIGN:center",
                           "LINEHEIGHT:1.2000000000000002",
                           "SIZE:36",
-                          "FONT:__SF-UI-Text-Heavy__",
                           "LETTERSPACING:0",
-                          "COLOR:rgb(255, 255, 255)"
+                          "COLOR:rgb(255, 255, 255)",
+                          "FONT:Roboto-Bold"
                         ]
                       },
                       "text" : "Lunch",
@@ -136,7 +136,7 @@
                 "blur" : 12,
                 "autoSize" : true,
                 "invertEnabled" : 0,
-                "width" : 116,
+                "width" : 100,
                 "brightness" : 100
               },
               {
@@ -157,12 +157,12 @@
                 "styledText" : {
                   "cached" : {
                     "size" : {
-                      "width" : 270,
+                      "width" : 213,
                       "height" : 16
                     },
                     "os" : "10_12",
                     "width" : 0,
-                    "html" : "<span data-offset-key=\"8fmvn-0-0\" style=\"tab-size:4;font-family:&quot;.SFNSText-Heavy&quot;, &quot;SFProText-Heavy&quot;, &quot;.SFUIText-Heavy&quot;, sans-serif;-webkit-text-fill-color:rgb(255, 255, 255);font-size:14px;letter-spacing:1px;line-height:1.2\"><span data-text=\"true\">SEOUL R&amp;D CENTER - Cafeteria 1<\/span><\/span>"
+                    "html" : "<span data-offset-key=\"8fmvn-0-0\" style=\"tab-size:4;font-family:&quot;RobotoCondensed-Regular&quot;, &quot;Roboto Condensed&quot;, sans-serif;-webkit-text-fill-color:rgb(255, 255, 255);font-size:14px;letter-spacing:1px;line-height:1.2;font-weight:400\"><span data-text=\"true\">SEOUL R&amp;D CENTER - Cafeteria 1<\/span><\/span>"
                   },
                   "entityMap" : {
 
@@ -172,33 +172,33 @@
                       "depth" : 0,
                       "inlineStyleRanges" : [
                         {
+                          "length" : 30,
                           "style" : "ALIGN:left",
-                          "length" : 30,
                           "offset" : 0
                         },
                         {
+                          "length" : 30,
                           "style" : "LETTERSPACING:1",
-                          "length" : 30,
                           "offset" : 0
                         },
                         {
+                          "length" : 30,
                           "style" : "LINEHEIGHT:1.2",
-                          "length" : 30,
                           "offset" : 0
                         },
                         {
+                          "length" : 30,
                           "style" : "SIZE:14",
-                          "length" : 30,
                           "offset" : 0
                         },
                         {
-                          "style" : "FONT:__SF-UI-Text-Heavy__",
                           "length" : 30,
-                          "offset" : 0
-                        },
-                        {
                           "style" : "COLOR:rgb(255, 255, 255)",
+                          "offset" : 0
+                        },
+                        {
                           "length" : 30,
+                          "style" : "FONT:RobotoCondensed-Regular",
                           "offset" : 0
                         }
                       ],
@@ -211,8 +211,8 @@
                           "LETTERSPACING:1",
                           "LINEHEIGHT:1.2",
                           "SIZE:14",
-                          "FONT:__SF-UI-Text-Heavy__",
-                          "COLOR:rgb(255, 255, 255)"
+                          "COLOR:rgb(255, 255, 255)",
+                          "FONT:RobotoCondensed-Regular"
                         ]
                       },
                       "text" : "SEOUL R&D CENTER - Cafeteria 1",
@@ -260,7 +260,7 @@
                 "blur" : 12,
                 "autoSize" : true,
                 "invertEnabled" : 0,
-                "width" : 270,
+                "width" : 213,
                 "brightness" : 100
               }
             ],
@@ -684,17 +684,17 @@
                             },
                             {
                               "length" : 3,
-                              "style" : "FONT:BMDoHyeon",
-                              "offset" : 0
-                            },
-                            {
-                              "length" : 3,
                               "style" : "ALIGN:left",
                               "offset" : 0
                             },
                             {
                               "length" : 3,
                               "style" : "SIZE:10",
+                              "offset" : 0
+                            },
+                            {
+                              "length" : 3,
+                              "style" : "FONT:Roboto-Regular",
                               "offset" : 0
                             }
                           ],
@@ -706,9 +706,9 @@
                               "LETTERSPACING:0",
                               "LINEHEIGHT:1.2",
                               "COLOR:rgb(119, 119, 119)",
-                              "FONT:BMDoHyeon",
                               "ALIGN:left",
-                              "SIZE:10"
+                              "SIZE:10",
+                              "FONT:Roboto-Regular"
                             ]
                           },
                           "text" : "반찬들",
@@ -735,17 +735,17 @@
                             },
                             {
                               "length" : 3,
-                              "style" : "FONT:BMDoHyeon",
-                              "offset" : 0
-                            },
-                            {
-                              "length" : 3,
                               "style" : "ALIGN:left",
                               "offset" : 0
                             },
                             {
                               "length" : 3,
                               "style" : "SIZE:10",
+                              "offset" : 0
+                            },
+                            {
+                              "length" : 3,
+                              "style" : "FONT:Roboto-Regular",
                               "offset" : 0
                             }
                           ],
@@ -757,9 +757,9 @@
                               "LETTERSPACING:0",
                               "LINEHEIGHT:1.2",
                               "COLOR:rgb(119, 119, 119)",
-                              "FONT:BMDoHyeon",
                               "ALIGN:left",
-                              "SIZE:10"
+                              "SIZE:10",
+                              "FONT:Roboto-Regular"
                             ]
                           },
                           "text" : "반찬들",
@@ -786,17 +786,17 @@
                             },
                             {
                               "length" : 3,
-                              "style" : "FONT:BMDoHyeon",
-                              "offset" : 0
-                            },
-                            {
-                              "length" : 3,
                               "style" : "ALIGN:left",
                               "offset" : 0
                             },
                             {
                               "length" : 3,
                               "style" : "SIZE:10",
+                              "offset" : 0
+                            },
+                            {
+                              "length" : 3,
+                              "style" : "FONT:Roboto-Regular",
                               "offset" : 0
                             }
                           ],
@@ -808,9 +808,9 @@
                               "LETTERSPACING:0",
                               "LINEHEIGHT:1.2",
                               "COLOR:rgb(119, 119, 119)",
-                              "FONT:BMDoHyeon",
                               "ALIGN:left",
-                              "SIZE:10"
+                              "SIZE:10",
+                              "FONT:Roboto-Regular"
                             ]
                           },
                           "text" : "반찬들",
@@ -837,17 +837,17 @@
                             },
                             {
                               "length" : 3,
-                              "style" : "FONT:BMDoHyeon",
-                              "offset" : 0
-                            },
-                            {
-                              "length" : 3,
                               "style" : "ALIGN:left",
                               "offset" : 0
                             },
                             {
                               "length" : 3,
                               "style" : "SIZE:10",
+                              "offset" : 0
+                            },
+                            {
+                              "length" : 3,
+                              "style" : "FONT:Roboto-Regular",
                               "offset" : 0
                             }
                           ],
@@ -859,9 +859,9 @@
                               "LETTERSPACING:0",
                               "LINEHEIGHT:1.2",
                               "COLOR:rgb(119, 119, 119)",
-                              "FONT:BMDoHyeon",
                               "ALIGN:left",
-                              "SIZE:10"
+                              "SIZE:10",
+                              "FONT:Roboto-Regular"
                             ]
                           },
                           "text" : "반찬들",
@@ -896,7 +896,7 @@
                     ],
                     "name" : "_sidemenu",
                     "saturate" : 100,
-                    "height" : 56,
+                    "height" : 48,
                     "blendingEnabled" : 0,
                     "top" : 88,
                     "constraintsLocked" : true,
@@ -910,9 +910,9 @@
                     "targetName" : "_sidemenu",
                     "bottom" : 6,
                     "blur" : 12,
-                    "autoSize" : false,
+                    "autoSize" : true,
                     "invertEnabled" : 0,
-                    "width" : 160,
+                    "width" : 27,
                     "brightness" : 100
                   },
                   {
@@ -931,6 +931,18 @@
                     "locked" : false,
                     "left" : 14,
                     "styledText" : {
+                      "cached" : {
+                        "size" : {
+                          "width" : 25,
+                          "height" : 14
+                        },
+                        "os" : "10_12",
+                        "width" : 0,
+                        "html" : "<span data-offset-key=\"cc2bq-0-0\" style=\"tab-size:4;font-family:&quot;Roboto-Regular&quot;, &quot;Roboto&quot;, sans-serif;-webkit-text-fill-color:#000000;font-size:12px;letter-spacing:0px;line-height:1.2;font-weight:400\"><span data-text=\"true\">싱푸 <\/span><\/span>"
+                      },
+                      "entityMap" : {
+
+                      },
                       "blocks" : [
                         {
                           "depth" : 0,
@@ -952,17 +964,17 @@
                             },
                             {
                               "length" : 3,
-                              "style" : "FONT:BMDoHyeon",
-                              "offset" : 0
-                            },
-                            {
-                              "length" : 3,
                               "style" : "ALIGN:left",
                               "offset" : 0
                             },
                             {
                               "length" : 3,
                               "style" : "SIZE:12",
+                              "offset" : 0
+                            },
+                            {
+                              "length" : 3,
+                              "style" : "FONT:Roboto-Regular",
                               "offset" : 0
                             }
                           ],
@@ -974,9 +986,9 @@
                               "COLOR:#000000",
                               "LETTERSPACING:0",
                               "LINEHEIGHT:1.2",
-                              "FONT:BMDoHyeon",
                               "ALIGN:left",
-                              "SIZE:12"
+                              "SIZE:12",
+                              "FONT:Roboto-Regular"
                             ]
                           },
                           "text" : "싱푸 ",
@@ -984,10 +996,7 @@
                           "type" : "unstyled"
                         }
                       ],
-                      "__class" : "StyledTextDraft",
-                      "entityMap" : {
-
-                      }
+                      "__class" : "StyledTextDraft"
                     },
                     "blendingMode" : "normal",
                     "invert" : 0,
@@ -1011,23 +1020,23 @@
                     ],
                     "name" : "_restaurant",
                     "saturate" : 100,
-                    "height" : 21,
+                    "height" : 14,
                     "blendingEnabled" : 0,
-                    "top" : 49,
+                    "top" : 66,
                     "constraintsLocked" : true,
                     "right" : null,
                     "visible" : true,
-                    "centerAnchorY" : 0.3966666666666667,
+                    "centerAnchorY" : 0.4866666666666667,
                     "contrast" : 100,
                     "grayScaleEnabled" : 0,
                     "hueRotate" : 0,
                     "heightFactor" : null,
                     "targetName" : "_restaurant",
-                    "bottom" : 80,
+                    "bottom" : 70,
                     "blur" : 12,
-                    "autoSize" : false,
+                    "autoSize" : true,
                     "invertEnabled" : 0,
-                    "width" : 160,
+                    "width" : 25,
                     "brightness" : 100
                   },
                   {
@@ -1051,33 +1060,33 @@
                           "depth" : 0,
                           "inlineStyleRanges" : [
                             {
-                              "length" : 4,
+                              "length" : 3,
                               "style" : "LETTERSPACING:0",
                               "offset" : 0
                             },
                             {
-                              "length" : 4,
-                              "style" : "LINEHEIGHT:1.2",
-                              "offset" : 0
-                            },
-                            {
-                              "length" : 4,
-                              "style" : "FONT:BMDoHyeon",
-                              "offset" : 0
-                            },
-                            {
-                              "length" : 4,
+                              "length" : 3,
                               "style" : "ALIGN:left",
                               "offset" : 0
                             },
                             {
-                              "length" : 4,
+                              "length" : 3,
                               "style" : "COLOR:#7755CC",
                               "offset" : 0
                             },
                             {
-                              "length" : 4,
+                              "length" : 3,
                               "style" : "SIZE:20",
+                              "offset" : 0
+                            },
+                            {
+                              "length" : 3,
+                              "style" : "LINEHEIGHT:1.2",
+                              "offset" : 0
+                            },
+                            {
+                              "length" : 3,
+                              "style" : "FONT:Roboto-Regular",
                               "offset" : 0
                             }
                           ],
@@ -1087,15 +1096,69 @@
                           "data" : {
                             "emptyStyle" : [
                               "LETTERSPACING:0",
-                              "LINEHEIGHT:1.2",
-                              "FONT:BMDoHyeon",
                               "ALIGN:left",
                               "COLOR:#7755CC",
-                              "SIZE:20"
+                              "SIZE:20",
+                              "LINEHEIGHT:1.2",
+                              "FONT:Roboto-Regular"
+                            ]
+                          },
+                          "text" : "자장면",
+                          "key" : "cc2bq",
+                          "type" : "unstyled"
+                        },
+                        {
+                          "depth" : 0,
+                          "inlineStyleRanges" : [
+                            {
+                              "length" : 3,
+                              "style" : "COLOR:rgb(119, 85, 204)",
+                              "offset" : 0
+                            },
+                            {
+                              "length" : 4,
+                              "style" : "SIZE:20",
+                              "offset" : 0
+                            },
+                            {
+                              "length" : 4,
+                              "style" : "LINEHEIGHT:1.2",
+                              "offset" : 0
+                            },
+                            {
+                              "length" : 4,
+                              "style" : "FONT:Roboto-Regular",
+                              "offset" : 0
+                            },
+                            {
+                              "length" : 1,
+                              "style" : "LETTERSPACING:0",
+                              "offset" : 3
+                            },
+                            {
+                              "length" : 1,
+                              "style" : "ALIGN:left",
+                              "offset" : 3
+                            },
+                            {
+                              "length" : 1,
+                              "style" : "COLOR:#7755CC",
+                              "offset" : 3
+                            }
+                          ],
+                          "entityRanges" : [
+
+                          ],
+                          "data" : {
+                            "emptyStyle" : [
+                              "COLOR:rgb(119, 85, 204)",
+                              "SIZE:20",
+                              "LINEHEIGHT:1.2",
+                              "FONT:Roboto-Regular"
                             ]
                           },
                           "text" : "자장면 ",
-                          "key" : "cc2bq",
+                          "key" : "7n5kb",
                           "type" : "unstyled"
                         }
                       ],
@@ -1126,23 +1189,23 @@
                     ],
                     "name" : "_menu",
                     "saturate" : 100,
-                    "height" : 28,
+                    "height" : 48,
                     "blendingEnabled" : 0,
                     "top" : 10,
                     "constraintsLocked" : true,
                     "right" : null,
                     "visible" : true,
-                    "centerAnchorY" : 0.16,
+                    "centerAnchorY" : 0.2266666666666667,
                     "contrast" : 100,
                     "grayScaleEnabled" : 0,
                     "hueRotate" : 0,
                     "heightFactor" : null,
                     "targetName" : "_menu",
-                    "bottom" : 112,
+                    "bottom" : 92,
                     "blur" : 12,
-                    "autoSize" : false,
+                    "autoSize" : true,
                     "invertEnabled" : 0,
-                    "width" : 160,
+                    "width" : 58,
                     "brightness" : 100
                   },
                   {
