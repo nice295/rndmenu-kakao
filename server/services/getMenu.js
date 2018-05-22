@@ -5,47 +5,6 @@ var Iconv1 = require('iconv').Iconv
 
 var returnString = "";
 
-/*
-var restaurantMap = [
-    ["/img/menu/seoulrnd/dayMenu/menu_b_spring.gif", "봄이온소반"],
-    ["/img/menu/seoulrnd/dayMenu/menu_b_to_sandwich.gif", "테이크아웃"],
-    ["/img/menu/seoulrnd/dayMenu/menu_b_brown.gif", "브라운그릴"],
-    ["/img/menu/seoulrnd/dayMenu/menu_b_dodam.gif", "도담찌개"],
-    ["/img/menu/seoulrnd/dayMenu/menu_b_woori.gif", "우리미각면"],
-    ["/img/menu/seoulrnd/dayMenu/menu_b_brown.gif", "브라운그릴"],
-    ["/img/menu/seoulrnd/dayMenu/menu_b_health_korean.gif", "아시안픽스"],
-    ["/img/menu/seoulrnd/dayMenu/menu_b_health_bibim.gif", "헬스기빙365"],
-    ["/img/menu/seoulrnd/dayMenu/menu_b_singfu.gif", "싱푸차이나"],
-
-    ["/img/menu/seoulrnd/dayMenu/menu_b_to_juice.gif", "테이크아웃"],
-    ["/img/menu/seoulrnd/dayMenu/menu_b_to_picnic.gif", "테이크아웃"],
-    ["/img/menu/seoulrnd/dayMenu/menu_b_to_pizza.gif", "테이크아웃"],
-    ["/img/menu/seoulrnd/dayMenu/menu_b_to_bibim.gif", "테이크아웃"],
-    ["/img/menu/seoulrnd/dayMenu/menu_b_to_fruit.gif", "테이크아웃"],
-    ["/img/menu/seoulrnd/dayMenu/menu_b_gosel.gif", "고슬고슬비빈"],
-    ["/img/menu/seoulrnd/dayMenu/menu_b_health_theme.gif", "헬스기빙365"],
-    ["/img/menu/seoulrnd/dayMenu/menu_b_snap_snack.gif", "테이크아웃"],
-    ["/img/menu/seoulrnd/dayMenu/menu_b_snap.gif", "스냅스넥"],
-    ["/img/menu/seoulrnd/dayMenu/menu_b_health_juice.gif", "테이크아웃"],
-    ["/img/menu/seoulrnd/dayMenu/menu_b_to_bread.gif", "테이크아웃"],
-    ["/img/menu/seoulrnd/dayMenu/menu_b_health_salad.gif", "테이크아웃"],
-    ["/img/menu/seoulrnd/dayMenu/menu_b_gats.gif", "가츠엔"],
-
-    ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_01.gif", "봄이온소반"],
-    ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_05.gif", "싱푸차이나"],
-    ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_02.gif", "도담찌개"],
-    ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_china_01.gif", "싱푸차이나"],
-    ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_china_02.gif", "싱푸차이나"],
-    ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_dodam_01.gif", "도담찌개"],
-    ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_dodam_02.gif", "도담찌개"],
-    ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_03.gif", "테이스티가든"],
-    ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_08.gif", "테이크아웃"],
-    ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_04.gif", "가츠엔"],
-    ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_09.gif", "테이크아웃"],
-    ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_healthy.gif", "테이크아웃"]
-];
-*/
-
 function getMenu(cafe, callback) {
     request({
             url: 'http://www.welstory.com/menu/seoulrnd/menu.jsp',

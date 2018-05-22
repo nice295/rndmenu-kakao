@@ -5,7 +5,7 @@
  */
 
 //let app = require('./app');
-let debug = require('debug')('botnode:server');
+//let debug = require('debug')('botnode:server');
 let http = require('http');
 
 const express = require('express');
@@ -43,7 +43,7 @@ app.use(function (err, req, res) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-  
+
   // render the error page
   res.status(err.status || 500);
   res.render('error');
@@ -129,5 +129,5 @@ function onListening() {
   let bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  //debug('Listening on ' + bind);
 }

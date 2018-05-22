@@ -7,6 +7,7 @@ const time = require('time');
 
 var returnString = "";
 
+/*
 var restaurantMap = [
     ["/img/menu/seoulrnd/dayMenu/menu_b_spring.gif", "봄이온소반"],
     ["/img/menu/seoulrnd/dayMenu/menu_b_to_sandwich.gif", "테이크아웃"],
@@ -44,8 +45,8 @@ var restaurantMap = [
     ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_04.gif", "가츠엔"],
     ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_09.gif", "테이크아웃"],
     ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_healthy.gif", "테이크아웃"]
-    
 ];
+*/
 
 function getTomorrowMenu(callback) {
     request({
@@ -64,7 +65,7 @@ function getTomorrowMenu(callback) {
 
             var $ = cheerio.load(strContents);
 
-            var myMap = new Map(restaurantMap);
+            //var myMap = new Map(restaurantMap);
 
             var date = $('.date', '#layer2').text();
             returnString = "내일 메뉴 - "+ date;
@@ -73,11 +74,11 @@ function getTomorrowMenu(callback) {
 
             $('.cafeB_tit', '#layer2').each(function () {
                 //var restaurant = myMap.get($(this).find('span.cafeB_restaurant').find('img').attr('src'));
-                var restaurant = $(this).find('span.img_orange').text(); 
-                if (restaurant) {  
+                var restaurant = $(this).find('span.img_orange').text();
+                if (restaurant) {
                     var description = $(this).parent().find('.cafeB_txt').text();
                     var menuTitle = $(this).text().trim();
-                  
+
                     menuTitle = menuTitle
                         .replace(restaurant, '')
                         .replace(/\s+/g, '')
@@ -99,7 +100,7 @@ function getTomorrowMenu(callback) {
                     console.log('restaurant : ' + restaurant);
                     console.log('menuTitle : ' + menuTitle);
                     console.log('description : ' + description);
-                  
+
                     returnString += "\n" + menuTitle + " (" + restaurant + ")";
                 } else {
                     console.log("*** No restaurant: " + $(this).find('span.cafeB_restaurant').find('img').attr('src'));
@@ -110,11 +111,11 @@ function getTomorrowMenu(callback) {
             returnString += "\n\n< 2식당(D타워) - 아침> (굿)";
             $('.cafeA_tit', '#layer1').each(function () {
                 //var restaurant = myMap.get($(this).find('span.cafeA_restaurant').find('img').attr('src'));
-                var restaurant = $(this).find('span.img_green').text(); 
-                if (restaurant) {             
+                var restaurant = $(this).find('span.img_green').text();
+                if (restaurant) {
                     var description = $(this).parent().find('.cafeB_txt').text();
                     var menuTitle = $(this).text().trim();
-                  
+
                     menuTitle = menuTitle
                         .replace(restaurant, '')
                         .replace(/\s+/g, '')
@@ -136,20 +137,20 @@ function getTomorrowMenu(callback) {
                     console.log('restaurant : ' + restaurant);
                     console.log('menuTitle : ' + menuTitle);
                     console.log('description : ' + description);
-                  
+
                     returnString += "\n" + menuTitle + " (" + restaurant + ")";
                 } else {
                     console.log("*** No restaurant: " + $(this).find('span.cafeA_restaurant').find('img').attr('src'));
                 }
             });
 
-            //callback(returnString); 
+            //callback(returnString);
 
             //console.log("점심- Cafeteria 2");
             returnString += "\n\n< 2식당(D타워) - 점심> (아잉)";
             $('.cafeA_tit', '#layer2').each(function () {
                 //var restaurant = myMap.get($(this).find('span.cafeA_restaurant').find('img').attr('src'));
-                var restaurant = $(this).find('span.img_green').text(); 
+                var restaurant = $(this).find('span.img_green').text();
                 if (restaurant) {
                     var menuTitle = $(this).text().trim();
                     var description = $(this).parent().find('.cafeA_txt').text();
@@ -178,20 +179,20 @@ function getTomorrowMenu(callback) {
                     console.log('restaurant : ' + restaurant);
                     console.log('menuTitle : ' + menuTitle);
                     console.log('description : ' + description);
-                  
+
                     returnString += "\n" + menuTitle + " (" + restaurant + ")";
                 } else {
                     console.log("*** No restaurant: " + $(this).find('span.cafeA_restaurant').find('img').attr('src'));
                 }
             });
 
-            //callback(returnString); 
+            //callback(returnString);
 
             //console.log("점심- Cafeteria 2");
             returnString += "\n\n< 2식당(D타워) - 저녁> (감동)";
             $('.cafeA_tit', '#layer3').each(function () {
                 //var restaurant = myMap.get($(this).find('span.cafeA_restaurant').find('img').attr('src'));
-                var restaurant = $(this).find('span.img_green').text(); 
+                var restaurant = $(this).find('span.img_green').text();
                 if (restaurant) {
                     var menuTitle = $(this).text().trim();
                     var description = $(this).parent().find('.cafeA_txt').text();
@@ -220,7 +221,7 @@ function getTomorrowMenu(callback) {
                     console.log('restaurant : ' + restaurant);
                     console.log('menuTitle : ' + menuTitle);
                     console.log('description : ' + description);
-                  
+
                     returnString += "\n" + menuTitle + " (" + restaurant + ")";
                 } else {
                     console.log("*** No restaurant: " + $(this).find('span.cafeA_restaurant').find('img').attr('src'));
