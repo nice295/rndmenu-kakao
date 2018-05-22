@@ -43,10 +43,14 @@ scroll.onMove (event) ->
 	HeaderNew.opacity = Utils.modulate(event.y, [scrollStart, range], [1, 0], true)
 	HeaderDay.y = Utils.modulate(event.y, [scrollStart, range], [32, 15], true)
 	HeaderDay.fontSize = Utils.modulate(event.y, [scrollStart, range], [36, 14], true)
+	for index in [0..menusArray.length-1]
+		layername = "image"+index
+		Layer.select(layername).scale = Utils.modulate(event.y, [scrollStart+index*Layer.select(layername).height, scrollStart+index*Layer.select(layername).height-range], [1.0, 1.2], true)
 
 # Get Menu DB
 Utils.insertCSS('@import url(https://fonts.googleapis.com/earlyaccess/hanna.css);')
-	
+
+menusArray = 0	
 menuDB.get "/menu/"+getDate()+"/1식당/점심", (menus) ->
 	menusArray = _.toArray(menus)
 
@@ -85,10 +89,8 @@ menuDB.get "/menu/"+getDate()+"/1식당/점심", (menus) ->
 		image = _image.copySingle()
 		image.parent = item
 		image.image = menuData.photoUrl
-		#menu.width = item.width - image.width
-		#sidemenu.width = item.width - image.width
-		#restaurant.width = item.width - image.width
-		#print menuData.menu + ": " + menuData.photoUrl	
+		image.name = "image" + index
+
 						
 		menuDB.get "/foods/"+menuData.menu, (foods) ->
 			if foods.image
