@@ -9,7 +9,7 @@ Framer.Extras.Hints.disable()
 getDate = ->
 	today = new Date
 	mm = today.getMonth() + 1 
-	dd = today.getDate() + 1
+	dd = today.getDate()
 	if dd < 10  
 		dd = '0' + dd  
 	if mm < 10  
