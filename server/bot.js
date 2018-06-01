@@ -97,6 +97,7 @@ router.post('/message', checkUserKey, (req, res) => {
     content: req.body.content
   };
 
+  console.log(`Type is ${_obj.type}`);
   Bot.choseMenu(req, _obj.content, (err, result) => {
     if (!err) {
       res.set({
@@ -120,6 +121,15 @@ router.post('/friend', checkUserKey, (req, res) => {
 });
 
 router.delete('/friend', checkUserKey, (req, res) => {
+  const user_key = req.body.user_key;
+  console.log(`${user_key}님이 쳇팅방을 차단했습니다.`);
+  
+  res.set({
+    'content-type': 'application/json'
+  }).send(JSON.stringify({success: true}));
+});
+
+router.delete('/friend/test', checkUserKey, (req, res) => {
   const user_key = req.body.user_key;
   console.log(`${user_key}님이 쳇팅방을 차단했습니다.`);
   
