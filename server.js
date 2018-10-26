@@ -5,17 +5,17 @@
  */
 
 //let app = require('./app');
-//let debug = require('debug')('botnode:server');
+let debug = require('debug')('botnode:server');
 let http = require('http');
 
 const express = require('express');
 const path = require('path');
-const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const bot = require('./bot');
 const app = express();
+
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -31,9 +31,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', bot);
 
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-  const err = new Error('Not Found');
+  const err = new Error('Not Found' + req);
   err.status = 404;
   next(err);
 });
@@ -43,7 +44,7 @@ app.use(function (err, req, res) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
+  
   // render the error page
   res.status(err.status || 500);
   res.render('error');
@@ -129,5 +130,5 @@ function onListening() {
   let bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  //debug('Listening on ' + bind);
+  debug('Listening on ' + bind);
 }
