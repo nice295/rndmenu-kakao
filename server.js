@@ -5,7 +5,7 @@
  */
 
 //let app = require('./app');
-let debug = require('debug')('botnode:server');
+// let debug = require('debug')('botnode:server');
 let http = require('http');
 
 const express = require('express');
@@ -130,5 +130,5 @@ function onListening() {
   let bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  // debug('Listening on ' + bind);
 }
