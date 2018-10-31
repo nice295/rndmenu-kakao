@@ -71,10 +71,14 @@ router.get('/tomorrow', (req, res) => {
   });
 });
 
+router.get('/', (req, res) => {
+  res.send('<h1>Hello</h1>');
+});
+
 router.get('/test', (req, res) => {
   console.log("time is " + getTime());
-  // getRecomm_2Lunch(formatDate(), function (data) {
-  getRecomm_1Lunch('20181029', function (data) {
+  getRecomm_2Lunch(formatDate(), function (data) {
+  // getRecomm_1Lunch('20181029', function (data) {
     res.send(data);
   });  
 });

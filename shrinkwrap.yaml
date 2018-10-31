@@ -6,7 +6,6 @@ dependencies:
   cheerio: 0.22.0
   cookie-parser: 1.4.3
   dateformat: 3.0.3
-  debug: 2.2.0
   express: 4.16.3
   firebase: 5.0.2
   google-images: 2.1.0
@@ -2593,7 +2592,6 @@ specifiers:
   cheerio: ^0.22.0
   cookie-parser: ~1.4.3
   dateformat: latest
-  debug: ~2.2.0
   express: latest
   firebase: latest
   google-images: ^2.1.0
